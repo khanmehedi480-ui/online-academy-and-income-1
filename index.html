@@ -758,15 +758,6 @@ section{
     </p>
 
 </footer>
-<script>
-function openLogin(){
-    document.getElementById("loginPopup").style.display = "flex";
-}
-
-function closeLogin(){
-    document.getElementById("loginPopup").style.display = "none";
-}
-
 <!-- LOGIN POPUP -->
 
 <div class="login-popup" id="loginPopup">
@@ -776,6 +767,7 @@ function closeLogin(){
         <button class="close-login" onclick="closeLogin()">×</button>
 
         <h2>Welcome Back</h2>
+
         <p>Login to continue</p>
 
         <form onsubmit="loginUser(event)">
