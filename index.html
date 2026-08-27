@@ -173,24 +173,42 @@ nav a:hover{
 }
 
 </style>
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
+
+body{
+    background:#050505;
+    color:#fff;
+}
+
+/* NAVBAR */
+nav{
+    position:sticky;
+    top:0;
+    z-index:9999;
+    width:100%;
+    padding:15px 7%;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    background:rgba(7,7,7,.95);
+    backdrop-filter:blur(15px);
+    border-bottom:1px solid rgba(255,0,0,.25);
+    box-shadow:0 8px 30px rgba(0,0,0,.4);
+}
+
 .logo{
     text-decoration:none;
     color:#ff1a1a;
     font-size:22px;
     font-weight:900;
     letter-spacing:1px;
-    text-shadow:
-        0 0 5px #ff0000,
-        0 0 12px #ff0000,
-        0 0 25px rgba(255,0,0,.7);
-    transition:.3s ease;
-}
-
-.logo span{
-    color:#5fffe0;
-    text-shadow:
-        0 0 5px #5fffe0,
-        0 0 12px #5fffe0;
+    text-shadow:0 0 5px #ff0000,0 0 12px #ff0000;
 }
 
 .nav-links{
@@ -202,11 +220,17 @@ nav a:hover{
     text-decoration:none;
     color:red !important;
     font-weight:bold;
-    transition:color 0.2s ease;
+    transition:.2s ease;
 }
 
 .nav-links a:hover{
     color:#5fffe0 !important;
+}
+
+.nav-btn{
+    background:#a00000;
+    padding:10px 20px;
+    border-radius:25px;
 }
 
 /* HERO */
@@ -219,25 +243,8 @@ nav a:hover{
     padding:70px 20px;
     color:white;
     background:
-        radial-gradient(circle at 20% 20%,rgba(0,229,255,.35),transparent 30%),
-        radial-gradient(circle at 80% 30%,rgba(180,0,255,.35),transparent 30%),
-        radial-gradient(circle at 50% 90%,rgba(0,255,170,.25),transparent 35%),
-        linear-gradient(135deg,#06133d,#073b9c,#06133d);
-    position:relative;
-    overflow:hidden;
-}
-
-.hero{
-    min-height:650px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    text-align:center;
-    padding:70px 20px;
-    color:white;
-    background:
         radial-gradient(circle at 20% 20%,rgba(255,0,0,.25),transparent 30%),
-        radial-gradient(circle at 80% 30%,rgba(120,0,255,.30),transparent 30%),
+        radial-gradient(circle at 80% 30%,rgba(120,0,255,.25),transparent 30%),
         radial-gradient(circle at 50% 90%,rgba(255,0,60,.20),transparent 35%),
         linear-gradient(135deg,#050505,#16000a,#050505);
     position:relative;
@@ -258,15 +265,12 @@ nav a:hover{
     background:rgba(255,0,0,.08);
     margin-bottom:25px;
     color:#ff4d4d;
-    box-shadow:0 0 20px rgba(255,0,0,.15);
 }
 
 .hero h1{
     font-size:60px;
     margin-bottom:20px;
-    text-shadow:
-        0 0 10px rgba(255,0,0,.5),
-        0 5px 25px rgba(0,0,0,.5);
+    text-shadow:0 0 10px rgba(255,0,0,.5);
 }
 
 .hero h1 span{
@@ -304,19 +308,18 @@ nav a:hover{
 
 .btn-primary:hover{
     transform:translateY(-3px);
-    box-shadow:0 8px 30px rgba(255,0,0,.6);
+    box-shadow:0 0 30px rgba(255,0,0,.6);
 }
 
 .btn-secondary{
-    border:1px solid rgba(255,255,255,.3);
+    border:1px solid rgba(255,0,0,.5);
     color:white;
-    background:rgba(255,255,255,.06);
+    background:rgba(255,0,0,.06);
 }
 
 .btn-secondary:hover{
-    color:#ff2020;
-    border-color:#ff2020;
-    transform:translateY(-3px);
+    color:#5fffe0;
+    border-color:#5fffe0;
 }
 
 /* SECTION */
@@ -331,15 +334,23 @@ section{
 
 .section-title h2{
     font-size:38px;
-    color:#092d72;
+    color:#ff2020;
     margin-bottom:12px;
+    text-shadow:0 0 12px rgba(255,0,0,.4);
 }
 
 .section-title p{
-    color:#687386;
+    color:#bdbdbd;
 }
 
 /* COURSES */
+#courses{
+    background:
+        radial-gradient(circle at 15% 20%,rgba(255,0,0,.18),transparent 30%),
+        radial-gradient(circle at 85% 70%,rgba(120,0,0,.20),transparent 35%),
+        linear-gradient(135deg,#050505,#160005,#050505);
+}
+
 .courses{
     display:grid;
     grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
@@ -347,30 +358,23 @@ section{
 }
 
 .course{
-    background:linear-gradient(145deg,#111111,#1b0508);
+    background:#090909;
     padding:30px;
     border-radius:20px;
-    border:1px solid rgba(255,0,0,.15);
-    box-shadow:0 10px 30px rgba(0,0,0,.25);
-    transition:.3s ease;
+    border:1px solid rgba(255,0,0,.2);
+    box-shadow:0 10px 30px rgba(0,0,0,.5);
+    transition:.35s ease;
 }
 
 .course:hover{
     transform:translateY(-10px);
     border-color:#ff2020;
-    box-shadow:
-        0 15px 40px rgba(255,0,0,.25),
-        0 0 25px rgba(255,0,0,.15);
+    box-shadow:0 0 35px rgba(255,0,0,.45);
 }
 
 .icon{
     font-size:42px;
     margin-bottom:20px;
-    transition:.3s ease;
-}
-
-.course:hover .icon{
-    transform:scale(1.15);
 }
 
 .course h3{
@@ -380,13 +384,16 @@ section{
 }
 
 .course p{
-    color:#c9c9c9;
+    color:#d0d0d0;
     line-height:1.7;
 }
 
 /* WHY US */
-.why{
-    background:#eef4ff;
+#why{
+    background:
+        radial-gradient(circle at 20% 30%,rgba(255,0,0,.16),transparent 30%),
+        radial-gradient(circle at 80% 70%,rgba(120,0,0,.20),transparent 35%),
+        linear-gradient(135deg,#050505,#160005,#050505);
 }
 
 .features{
@@ -396,19 +403,28 @@ section{
 }
 
 .feature{
-    background:white;
+    background:#090909;
     padding:30px;
     border-radius:18px;
     text-align:center;
+    border:1px solid rgba(255,0,0,.18);
+    box-shadow:0 10px 30px rgba(0,0,0,.5);
+    transition:.35s ease;
+}
+
+.feature:hover{
+    transform:translateY(-10px);
+    border-color:#ff2020;
+    box-shadow:0 0 35px rgba(255,0,0,.4);
 }
 
 .feature h3{
     margin:15px 0 10px;
-    color:#092d72;
+    color:#ff2020;
 }
 
 .feature p{
-    color:#687386;
+    color:#d0d0d0;
     line-height:1.6;
 }
 
@@ -416,29 +432,44 @@ section{
 .cta{
     text-align:center;
     color:white;
-    background:linear-gradient(135deg,#073b9c,#159895);
+    background:
+        radial-gradient(circle at 20% 30%,rgba(255,0,0,.25),transparent 30%),
+        radial-gradient(circle at 80% 70%,rgba(120,0,0,.30),transparent 35%),
+        linear-gradient(135deg,#050505,#220006,#050505);
+    border-top:1px solid rgba(255,0,0,.25);
+    border-bottom:1px solid rgba(255,0,0,.25);
 }
 
 .cta h2{
     font-size:40px;
     margin-bottom:15px;
+    color:#ff2020;
+    text-shadow:0 0 10px rgba(255,0,0,.5);
 }
 
 .cta p{
     font-size:18px;
     margin-bottom:30px;
+    color:#d0d0d0;
 }
 
 /* FOOTER */
 footer{
-    background:#06133d;
-    color:#b9c7e8;
+    background:
+        radial-gradient(circle at 50% 0%,rgba(255,0,0,.18),transparent 40%),
+        linear-gradient(180deg,#160005,#030303);
+    color:#999;
     text-align:center;
-    padding:30px 20px;
+    padding:35px 20px;
+    border-top:1px solid rgba(255,0,0,.25);
+}
+
+footer p{
+    margin:8px 0;
 }
 
 footer strong{
-    color:white;
+    color:#ff2020;
 }
 
 /* MOBILE */
