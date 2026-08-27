@@ -825,8 +825,22 @@ function loginUser(event){
     const email = document.getElementById("loginEmail").value;
     const password = document.getElementById("loginPassword").value;
 
+    if(email === "" || password === ""){
+        alert("Please enter your email and password.");
+        return;
+    }
+
+    // Login successful
     alert("Login successful!\nEmail: " + email);
+
+    // Popup বন্ধ
+    closeLogin();
+
+    // Login button পরিবর্তন
+    const loginButton = document.querySelector(".nav-btn");
+    loginButton.textContent = "LOGGED IN";
 }
+
 
 </script>
 
