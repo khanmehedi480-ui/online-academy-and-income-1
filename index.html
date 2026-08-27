@@ -1,1 +1,473 @@
-# online-academy-and-income-1
+```html
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Mojan Online Academy</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+body{
+    background:#f5f7ff;
+    color:#172033;
+}
+
+/* NAVBAR */
+nav{
+    width:100%;
+    padding:18px 7%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    background:rgba(255,255,255,.95);
+    box-shadow:0 3px 20px rgba(0,0,0,.08);
+    position:sticky;
+    top:0;
+    z-index:100;
+}
+
+.logo{
+    font-size:24px;
+    font-weight:bold;
+    color:#0757d5;
+}
+
+.nav-links{
+    display:flex;
+    gap:25px;
+}
+
+.nav-links a{
+    text-decoration:none;
+    color:#172033;
+    font-weight:bold;
+}
+
+.nav-btn{
+    background:#0757d5;
+    color:white!important;
+    padding:10px 20px;
+    border-radius:25px;
+}
+
+/* HERO */
+.hero{
+    min-height:650px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding:70px 20px;
+    color:white;
+    background:
+        radial-gradient(circle at 20% 20%,rgba(0,229,255,.35),transparent 30%),
+        radial-gradient(circle at 80% 30%,rgba(180,0,255,.35),transparent 30%),
+        radial-gradient(circle at 50% 90%,rgba(0,255,170,.25),transparent 35%),
+        linear-gradient(135deg,#06133d,#073b9c,#06133d);
+    position:relative;
+    overflow:hidden;
+}
+
+.hero:before,
+.hero:after{
+    content:"";
+    position:absolute;
+    border-radius:50%;
+    border:1px solid rgba(255,255,255,.15);
+}
+
+.hero:before{
+    width:500px;
+    height:500px;
+}
+
+.hero:after{
+    width:750px;
+    height:750px;
+}
+
+.hero-content{
+    max-width:900px;
+    position:relative;
+    z-index:2;
+}
+
+.badge{
+    display:inline-block;
+    padding:10px 20px;
+    border:1px solid rgba(255,255,255,.4);
+    border-radius:30px;
+    background:rgba(255,255,255,.1);
+    margin-bottom:25px;
+}
+
+.hero h1{
+    font-size:60px;
+    margin-bottom:20px;
+    text-shadow:0 5px 25px rgba(0,0,0,.3);
+}
+
+.hero h1 span{
+    color:#5fffe0;
+}
+
+.hero p{
+    font-size:22px;
+    line-height:1.7;
+    margin-bottom:35px;
+    color:#e8efff;
+}
+
+.buttons{
+    display:flex;
+    justify-content:center;
+    gap:15px;
+    flex-wrap:wrap;
+}
+
+.btn{
+    padding:15px 30px;
+    border-radius:30px;
+    text-decoration:none;
+    font-weight:bold;
+    font-size:17px;
+}
+
+.btn-primary{
+    background:#fff;
+    color:#0757d5;
+}
+
+.btn-secondary{
+    border:1px solid rgba(255,255,255,.5);
+    color:white;
+    background:rgba(255,255,255,.08);
+}
+
+/* SECTION */
+section{
+    padding:80px 7%;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:50px;
+}
+
+.section-title h2{
+    font-size:38px;
+    color:#092d72;
+    margin-bottom:12px;
+}
+
+.section-title p{
+    color:#687386;
+}
+
+/* COURSES */
+.courses{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+    gap:25px;
+}
+
+.course{
+    background:white;
+    padding:30px;
+    border-radius:20px;
+    box-shadow:0 10px 30px rgba(20,50,100,.08);
+    transition:.3s;
+}
+
+.course:hover{
+    transform:translateY(-8px);
+    box-shadow:0 15px 35px rgba(20,50,100,.15);
+}
+
+.icon{
+    font-size:42px;
+    margin-bottom:20px;
+}
+
+.course h3{
+    color:#092d72;
+    margin-bottom:12px;
+    font-size:23px;
+}
+
+.course p{
+    color:#687386;
+    line-height:1.7;
+}
+
+/* WHY US */
+.why{
+    background:#eef4ff;
+}
+
+.features{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:25px;
+}
+
+.feature{
+    background:white;
+    padding:30px;
+    border-radius:18px;
+    text-align:center;
+}
+
+.feature h3{
+    margin:15px 0 10px;
+    color:#092d72;
+}
+
+.feature p{
+    color:#687386;
+    line-height:1.6;
+}
+
+/* CTA */
+.cta{
+    text-align:center;
+    color:white;
+    background:linear-gradient(135deg,#073b9c,#159895);
+}
+
+.cta h2{
+    font-size:40px;
+    margin-bottom:15px;
+}
+
+.cta p{
+    font-size:18px;
+    margin-bottom:30px;
+}
+
+/* FOOTER */
+footer{
+    background:#06133d;
+    color:#b9c7e8;
+    text-align:center;
+    padding:30px 20px;
+}
+
+footer strong{
+    color:white;
+}
+
+/* MOBILE */
+@media(max-width:700px){
+
+    .nav-links{
+        display:none;
+    }
+
+    .hero h1{
+        font-size:40px;
+    }
+
+    .hero p{
+        font-size:18px;
+    }
+
+    .section-title h2{
+        font-size:30px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVIGATION -->
+<nav>
+    <div class="logo">MOJAN ONLINE ACADEMY</div>
+
+    <div class="nav-links">
+        <a href="#">হোম</a>
+        <a href="#courses">কোর্স</a>
+        <a href="#why">কেন আমরা</a>
+        <a href="#contact">যোগাযোগ</a>
+        <a href="#" class="nav-btn">লগইন</a>
+    </div>
+</nav>
+
+
+<!-- HERO -->
+<div class="hero">
+
+    <div class="hero-content">
+
+        <div class="badge">
+            🚀 Learn Skills • Build Career • Earn Online
+        </div>
+
+        <h1>
+            শিখুন <span>দক্ষতা</span>,<br>
+            গড়ুন নিজের ভবিষ্যৎ
+        </h1>
+
+        <p>
+            মোজান অনলাইন একাডেমিতে শিখুন ফ্রিল্যান্সিং,
+            ডিজিটাল স্কিল ও অনলাইন আয়ের বাস্তব জ্ঞান।
+        </p>
+
+        <div class="buttons">
+            <a href="#courses" class="btn btn-primary">
+                🎓 কোর্স দেখুন
+            </a>
+
+            <a href="#contact" class="btn btn-secondary">
+                📩 যোগাযোগ করুন
+            </a>
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- COURSES -->
+<section id="courses">
+
+    <div class="section-title">
+        <h2>আমাদের কোর্স</h2>
+        <p>যে দক্ষতা শিখে আপনি অনলাইনে নিজের ক্যারিয়ার তৈরি করতে পারেন</p>
+    </div>
+
+    <div class="courses">
+
+        <div class="course">
+            <div class="icon">💻</div>
+            <h3>Freelancing</h3>
+            <p>
+                ফ্রিল্যান্সিংয়ের বেসিক থেকে শুরু করে
+                অনলাইন মার্কেটপ্লেসে কাজ করার প্রস্তুতি।
+            </p>
+        </div>
+
+        <div class="course">
+            <div class="icon">🎨</div>
+            <h3>Graphic Design</h3>
+            <p>
+                গ্রাফিক ডিজাইনের মাধ্যমে নিজের
+                সৃজনশীল দক্ষতা কাজে লাগিয়ে অনলাইনে কাজ শেখা।
+            </p>
+        </div>
+
+        <div class="course">
+            <div class="icon">🌐</div>
+            <h3>Web Development</h3>
+            <p>
+                ওয়েবসাইট তৈরি ও ওয়েব ডেভেলপমেন্টের
+                প্রয়োজনীয় দক্ষতা ধাপে ধাপে শেখা।
+            </p>
+        </div>
+
+        <div class="course">
+            <div class="icon">📱</div>
+            <h3>Digital Marketing</h3>
+            <p>
+                ডিজিটাল মার্কেটিং ও অনলাইন ব্যবসার
+                গুরুত্বপূর্ণ বিষয়গুলো শেখার সুযোগ।
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- WHY US -->
+<section class="why" id="why">
+
+    <div class="section-title">
+        <h2>কেন মোজান অনলাইন একাডেমি?</h2>
+        <p>শেখা থেকে বাস্তব কাজের দিকে এগিয়ে যাওয়ার জন্য</p>
+    </div>
+
+    <div class="features">
+
+        <div class="feature">
+            <div class="icon">🎯</div>
+            <h3>প্র্যাকটিক্যাল শিক্ষা</h3>
+            <p>
+                শুধু বইয়ের জ্ঞান নয়,
+                বাস্তব কাজ শেখার দিকে গুরুত্ব।
+            </p>
+        </div>
+
+        <div class="feature">
+            <div class="icon">🔒</div>
+            <h3>প্রিমিয়াম কোর্স</h3>
+            <p>
+                ভবিষ্যতে পেমেন্ট করা শিক্ষার্থীদের
+                জন্য প্রিমিয়াম কোর্স ও লেসন থাকবে।
+            </p>
+        </div>
+
+        <div class="feature">
+            <div class="icon">💰</div>
+            <h3>অনলাইন আয়ের প্রস্তুতি</h3>
+            <p>
+                অনলাইনে দক্ষতা ব্যবহার করে
+                কাজ করার জন্য প্রস্তুত করা।
+            </p>
+        </div>
+
+        <div class="feature">
+            <div class="icon">🚀</div>
+            <h3>ক্যারিয়ার ফোকাস</h3>
+            <p>
+                শেখা দক্ষতাকে বাস্তব ক্যারিয়ারে
+                কাজে লাগানোর লক্ষ্য।
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- CALL TO ACTION -->
+<section class="cta" id="contact">
+
+    <h2>আজ থেকেই শেখা শুরু করুন 🚀</h2>
+
+    <p>
+        নিজের দক্ষতা তৈরি করুন এবং অনলাইন ক্যারিয়ারের পথে এগিয়ে যান।
+    </p>
+
+    <a href="#" class="btn btn-primary">
+        এখনই শুরু করুন
+    </a>
+
+</section>
+
+
+<!-- FOOTER -->
+<footer>
+
+    <p>
+        © 2026 <strong>Mojan Online Academy</strong>
+    </p>
+
+    <p>
+        Learn Skills • Build Career • Earn Online
+    </p>
+
+</footer>
+
+</body>
+</html>
+```
