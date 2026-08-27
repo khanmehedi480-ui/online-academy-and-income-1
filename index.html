@@ -429,6 +429,103 @@ section{
     .hero p{
         font-size:18px;
     }
+.login-popup{
+    display:none;
+    position:fixed;
+    inset:0;
+    z-index:10000;
+    background:rgba(0,0,0,.80);
+    backdrop-filter:blur(10px);
+
+    align-items:center;
+    justify-content:center;
+    padding:20px;
+}
+
+.login-box{
+    width:100%;
+    max-width:430px;
+    padding:40px 35px;
+    background:#090909;
+    border:1px solid rgba(255,0,0,.35);
+    border-radius:22px;
+    box-shadow:0 0 40px rgba(255,0,0,.25);
+    text-align:center;
+    position:relative;
+}
+
+.close-login{
+    position:absolute;
+    top:12px;
+    right:15px;
+    width:35px;
+    height:35px;
+    border:none;
+    border-radius:50%;
+    background:#1a1a1a;
+    color:#ff2020;
+    font-size:25px;
+    cursor:pointer;
+}
+
+.login-icon{
+    font-size:50px;
+    margin-bottom:15px;
+}
+
+.login-box h2{
+    color:#ff2020;
+    font-size:30px;
+    margin-bottom:10px;
+}
+
+.login-box > p{
+    color:#bdbdbd;
+    margin-bottom:25px;
+}
+
+.login-box form{
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+}
+
+.login-box input{
+    width:100%;
+    padding:15px 18px;
+    background:#111;
+    color:white;
+    border:1px solid rgba(255,0,0,.25);
+    border-radius:10px;
+    outline:none;
+    font-size:16px;
+}
+
+.login-box input:focus{
+    border-color:#ff2020;
+    box-shadow:0 0 15px rgba(255,0,0,.25);
+}
+
+.login-submit{
+    padding:15px;
+    border:none;
+    border-radius:10px;
+    background:linear-gradient(135deg,#ff0000,#8b0000);
+    color:white;
+    font-size:16px;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+.login-note{
+    margin-top:20px;
+    font-size:14px;
+    color:#888;
+}
+
+.login-note span{
+    color:#ff2020;
+    cursor:pointer;
 }
 </style>
 </head>
