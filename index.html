@@ -99,22 +99,21 @@ nav a:hover{
     overflow:hidden;
 }
 
-.hero:before,
-.hero:after{
-    content:"";
-    position:absolute;
-    border-radius:50%;
-    border:1px solid rgba(255,255,255,.15);
-}
-
-.hero:before{
-    width:500px;
-    height:500px;
-}
-
-.hero:after{
-    width:750px;
-    height:750px;
+.hero{
+    min-height:650px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding:70px 20px;
+    color:white;
+    background:
+        radial-gradient(circle at 20% 20%,rgba(255,0,0,.25),transparent 30%),
+        radial-gradient(circle at 80% 30%,rgba(120,0,255,.30),transparent 30%),
+        radial-gradient(circle at 50% 90%,rgba(255,0,60,.20),transparent 35%),
+        linear-gradient(135deg,#050505,#16000a,#050505);
+    position:relative;
+    overflow:hidden;
 }
 
 .hero-content{
@@ -126,27 +125,31 @@ nav a:hover{
 .badge{
     display:inline-block;
     padding:10px 20px;
-    border:1px solid rgba(255,255,255,.4);
+    border:1px solid rgba(255,0,0,.5);
     border-radius:30px;
-    background:rgba(255,255,255,.1);
+    background:rgba(255,0,0,.08);
     margin-bottom:25px;
+    color:#ff4d4d;
+    box-shadow:0 0 20px rgba(255,0,0,.15);
 }
 
 .hero h1{
     font-size:60px;
     margin-bottom:20px;
-    text-shadow:0 5px 25px rgba(0,0,0,.3);
+    text-shadow:
+        0 0 10px rgba(255,0,0,.5),
+        0 5px 25px rgba(0,0,0,.5);
 }
 
 .hero h1 span{
-    color:#5fffe0;
+    color:#ff2020;
 }
 
 .hero p{
     font-size:22px;
     line-height:1.7;
     margin-bottom:35px;
-    color:#e8efff;
+    color:#e8e8e8;
 }
 
 .buttons{
@@ -162,17 +165,30 @@ nav a:hover{
     text-decoration:none;
     font-weight:bold;
     font-size:17px;
+    transition:.3s ease;
 }
 
 .btn-primary{
-    background:#fff;
-    color:#0757d5;
+    background:linear-gradient(135deg,#ff0000,#8b0000);
+    color:white;
+    box-shadow:0 5px 25px rgba(255,0,0,.35);
+}
+
+.btn-primary:hover{
+    transform:translateY(-3px);
+    box-shadow:0 8px 30px rgba(255,0,0,.6);
 }
 
 .btn-secondary{
-    border:1px solid rgba(255,255,255,.5);
+    border:1px solid rgba(255,255,255,.3);
     color:white;
-    background:rgba(255,255,255,.08);
+    background:rgba(255,255,255,.06);
+}
+
+.btn-secondary:hover{
+    color:#ff2020;
+    border-color:#ff2020;
+    transform:translateY(-3px);
 }
 
 /* SECTION */
