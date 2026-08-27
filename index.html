@@ -939,6 +939,17 @@ function signupUser(event){
     closeSignup();
 }
 
+function logoutUser(){
+
+    const loginButton = document.querySelector(".nav-btn");
+
+    if(loginButton){
+        loginButton.textContent = "LOGIN";
+        loginButton.onclick = openLogin;
+    }
+
+    alert("You have been logged out.");
+}
 </script>
 
 </body>
