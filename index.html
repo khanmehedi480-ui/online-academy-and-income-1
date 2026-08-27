@@ -804,6 +804,71 @@ section{
 
         </form>
 
+        <p class="login-note">
+            নতুন শিক্ষার্থী?
+            <span onclick="openSignup()">অ্যাকাউন্ট তৈরি করুন</span>
+        </p>
+
+    </div>
+
+</div>
+
+
+<!-- SIGN UP POPUP -->
+
+<div class="login-popup" id="signupPopup">
+
+    <div class="login-box">
+
+        <button class="close-login" onclick="closeSignup()">×</button>
+
+        <div class="login-icon">👤</div>
+
+        <h2>Create Account</h2>
+
+        <p>মোজান অনলাইন একাডেমিতে নতুন অ্যাকাউন্ট তৈরি করুন</p>
+
+        <form onsubmit="signupUser(event)">
+
+            <input
+                type="text"
+                id="signupName"
+                placeholder="আপনার নাম"
+                required
+            >
+
+            <input
+                type="email"
+                id="signupEmail"
+                placeholder="আপনার ইমেইল"
+                required
+            >
+
+            <input
+                type="password"
+                id="signupPassword"
+                placeholder="একটি পাসওয়ার্ড দিন"
+                required
+            >
+
+            <input
+                type="password"
+                id="signupConfirm"
+                placeholder="পাসওয়ার্ড আবার লিখুন"
+                required
+            >
+
+            <button type="submit" class="login-submit">
+                🚀 CREATE ACCOUNT
+            </button>
+
+        </form>
+
+        <p class="login-note">
+            ইতিমধ্যে অ্যাকাউন্ট আছে?
+            <span onclick="openLoginFromSignup()">LOGIN</span>
+        </p>
+
     </div>
 
 </div>
@@ -830,21 +895,52 @@ function loginUser(event){
         return;
     }
 
-    // Login successful
     alert("Login successful!\nEmail: " + email);
 
-    // Popup বন্ধ
     closeLogin();
 
-    // Login button পরিবর্তন
     const loginButton = document.querySelector(".nav-btn");
-    loginButton.textContent = "LOGGED IN";
+
+    if(loginButton){
+        loginButton.textContent = "LOGGED IN";
+    }
 }
 
+
+function openSignup(){
+    document.getElementById("signupPopup").style.display = "flex";
+    document.getElementById("loginPopup").style.display = "none";
+}
+
+function closeSignup(){
+    document.getElementById("signupPopup").style.display = "none";
+}
+
+function openLoginFromSignup(){
+    closeSignup();
+    openLogin();
+}
+
+function signupUser(event){
+    event.preventDefault();
+
+    const name = document.getElementById("signupName").value;
+    const email = document.getElementById("signupEmail").value;
+    const password = document.getElementById("signupPassword").value;
+    const confirm = document.getElementById("signupConfirm").value;
+
+    if(password !== confirm){
+        alert("Password does not match!");
+        return;
+    }
+
+    alert("Account created successfully!\nWelcome, " + name);
+
+    closeSignup();
+}
 
 </script>
 
 </body>
 </html>
-
 
