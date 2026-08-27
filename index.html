@@ -453,6 +453,47 @@ section{
         </a>
     </div>
 </nav>
+<!-- LOGIN POPUP -->
+<div id="loginPopup" class="login-popup">
+
+    <div class="login-box">
+
+        <button class="close-login" onclick="closeLogin()">×</button>
+
+        <div class="login-icon">🔐</div>
+
+        <h2>Welcome Back!</h2>
+
+        <p>মোজান অনলাইন একাডেমিতে লগইন করুন</p>
+
+        <form onsubmit="loginUser(event)">
+
+            <input
+                type="email"
+                id="loginEmail"
+                placeholder="আপনার ইমেইল"
+                required
+            >
+
+            <input
+                type="password"
+                id="loginPassword"
+                placeholder="আপনার পাসওয়ার্ড"
+                required
+            >
+
+            <button type="submit" class="login-submit">
+                🔑 LOGIN
+            </button>
+
+        </form>
+
+        <p class="login-note">
+            নতুন শিক্ষার্থী? <span>অ্যাকাউন্ট তৈরি করুন</span>
+        </p>
+
+    </div>
+</div>
 <!-- HERO -->
 <div class="hero">
 
