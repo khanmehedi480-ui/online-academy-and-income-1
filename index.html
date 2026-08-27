@@ -204,8 +204,7 @@ nav{
     color:white !important;
     transform:translateY(-2px);
     box-shadow:0 0 25px rgba(255,0,0,.6);
-}
-</nav>
+}  
 /* HERO */
 .hero{
     min-height:650px;
@@ -294,7 +293,58 @@ nav{
     color:#5fffe0;
     border-color:#5fffe0;
 }
+/* SECTION */
+section{
+    padding:80px 7%;
+}
 
+.section-title{
+    text-align:center;
+    margin-bottom:50px;
+}
+
+.section-title h2{
+    font-size:38px;
+    color:#ff2020;
+    margin-bottom:12px;
+    text-shadow:0 0 12px rgba(255,0,0,.4);
+}
+
+.section-title p{
+    color:#bdbdbd;
+}
+
+/* COURSES GRID */
+.courses{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+    gap:25px;
+}
+
+.course{
+    padding:30px;
+    border-radius:20px;
+}
+
+/* ICON */
+.icon{
+    font-size:42px;
+    margin-bottom:20px;
+}
+
+/* FEATURES GRID */
+.features{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:25px;
+}
+
+.feature{
+    padding:30px;
+    border-radius:18px;
+    text-align:center;
+}
+    
 /* MOBILE */
 @media(max-width:700px){
 
@@ -336,9 +386,7 @@ nav{
             LOGIN
         </a>
     </div>
-
-
-
+</nav>
 <!-- HERO -->
 <div class="hero">
 
