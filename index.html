@@ -219,31 +219,40 @@ section{
 }
 
 .course{
-    background:white;
+    background:linear-gradient(145deg,#111111,#1b0508);
     padding:30px;
     border-radius:20px;
-    box-shadow:0 10px 30px rgba(20,50,100,.08);
-    transition:.3s;
+    border:1px solid rgba(255,0,0,.15);
+    box-shadow:0 10px 30px rgba(0,0,0,.25);
+    transition:.3s ease;
 }
 
 .course:hover{
-    transform:translateY(-8px);
-    box-shadow:0 15px 35px rgba(20,50,100,.15);
+    transform:translateY(-10px);
+    border-color:#ff2020;
+    box-shadow:
+        0 15px 40px rgba(255,0,0,.25),
+        0 0 25px rgba(255,0,0,.15);
 }
 
 .icon{
     font-size:42px;
     margin-bottom:20px;
+    transition:.3s ease;
+}
+
+.course:hover .icon{
+    transform:scale(1.15);
 }
 
 .course h3{
-    color:#092d72;
+    color:#ff3030;
     margin-bottom:12px;
     font-size:23px;
 }
 
 .course p{
-    color:#687386;
+    color:#c9c9c9;
     line-height:1.7;
 }
 
